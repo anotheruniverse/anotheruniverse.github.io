@@ -146,11 +146,11 @@
 <p>您通往GPT写作的大门。<br>这是一个基于浏览器的前端，用于AI辅助写作（交互冒险故事、NSFW小说、对话），支持多个本地和远程AI模型。<br>它提供了标准的一系列工具，包括记忆、作者注释、世界信息、保存和加载、可调整的AI设置、格式选项，以及导入现有AI Dungeon冒险的能力。您还可以打开冒险模式，并像AI Dungeon Unleashed一样玩游戏。<br>故事可以像小说一样进行，也可以作为文本冒险游戏或聊天机器人使用，通过简单的切换可以在多种游戏风格之间进行选择。<br>这使得KoboldAI不仅是一个写作助手、游戏，还是一个更多用途的平台。您玩的方式和人工智能的表现取决于您决定使用的模型或服务。无论您想使用免费、快速的Google Colab、您自己的高端图形卡、在线服务（例如OpenAI或Inferkit）的API密钥，还是您宁愿在CPU上较慢地运行，您都将能够找到适合您的使用KoboldAI的方式。 ——开源大世界</p>
 </blockquote>
 <h3 id="提示，该AI模型针对写小说进行过特别优化，并且只能使用英文对话。不过其模型对NSFW的内容支持良好"><a href="#提示，该AI模型针对写小说进行过特别优化，并且只能使用英文对话。不过其模型对NSFW的内容支持良好" class="headerlink" title="提示，该AI模型针对写小说进行过特别优化，并且只能使用英文对话。不过其模型对NSFW的内容支持良好"></a>提示，该AI模型针对写小说进行过特别优化，并且只能使用英文对话。不过其模型对NSFW的内容支持良好</h3><p>下载链接及使用方法在上面的网站中，在<a target="_blank" rel="noopener" href="https://github.com/KoboldAI/KoboldAI-Client/releases">下载</a>中选择一个KoboldAI的安装包（大概张这样：KoboldAI-1.19.2-Setup.exe）</p>
-<p>点击下载安装。打开后这便是KoboldAI的执行框架。<br>用过Stable Diffusion WebUI的小伙伴们肯定不会陌生，这也是基于网络框架实现的应用界面。<br>默认打开的地址是<a target="_blank" rel="noopener" href="http://localhost:5000/#%EF%BC%8C%E6%89%93%E5%BC%80%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%90%8E%E5%8F%AA%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5%E8%BF%99%E6%AE%B5%E5%9C%B0%E5%9D%80%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%89%93%E5%BC%80%E5%AE%83%E7%9A%84%E7%95%8C%E9%9D%A2%EF%BC%88%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%89">http://localhost:5000/#，打开应用程序后只需要在浏览器中输入这段地址就可以打开它的界面（如下图所示）</a><br><img src="KoboldAI.png"><br>到此为止你还不能正常使用KoboldAI，有了框架之后还需要<a target="_blank" rel="noopener" href="https://huggingface.co/KoboldAI">模型</a>，根据介绍页面中的提示选择你需要的模型，请注意对应模型需要的运存大小：</p>
+<p>点击下载安装。打开后这便是KoboldAI的执行框架。<br>用过Stable Diffusion WebUI的小伙伴们肯定不会陌生，这也是基于网络框架实现的应用界面。<br>默认打开的地址是<a target="_blank" rel="noopener" href="http://localhost:5000/#">http://localhost:5000/#</a><br>打开应用程序后只需要在浏览器中输入这段地址就可以打开它的界面（如下图所示）<br><img src="KoboldAI.png"><br>到此为止你还不能正常使用KoboldAI，有了框架之后还需要<a target="_blank" rel="noopener" href="https://huggingface.co/KoboldAI">模型</a>，根据介绍页面中的提示选择你需要的模型，请注意对应模型需要的运存大小：</p>
 <blockquote>
 <p>不同的模型对显卡显存有不同要求，其中：<br>1.3B的模型（也就是13亿参数的模型），需要显卡至少拥有4GB显存。<br>2.7B的模型（也就是27亿参数的模型），需要显卡至少拥有8GB显存。<br>6B的模型（也就是60亿参数的模型），需要显卡至少拥有16GB显存。<br>13B的模型（也就是130亿参数的模型），需要显卡至少拥有32GB显存。<br>20B的模型（也就是200亿参数的模型），需要显卡至少拥有64GB显存。</p>
 </blockquote>
-<p>安装好软件后，可以通过软件界面左上角AI直接下载相关模型。也可以从模型网站下载免费模型到电脑上，并把模型拷贝到KoboldAI\models文件夹下，每个不同的模型放在一个新建文件夹中。 然后在界面中选择AI-Load a model from its directory-选中你下载好的模型。导入之后就可以使用</p>
+<p>安装好软件后，可以通过软件界面左上角AI直接下载相关模型。也可以从模型网站下载免费模型到电脑上，并把模型拷贝到 KoboldAI/models 文件夹下，每个不同的模型放在一个新建文件夹中。 然后在界面中选择AI-Load a model from its directory-选中你下载好的模型。导入之后就可以使用</p>
 
       </section>
 
