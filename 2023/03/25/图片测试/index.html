@@ -131,8 +131,65 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p><img src="NM.png" alt="啊，这里是备注" title="Nomiki"></p>
-<p>这里有张图片，放上去试试</p>
+        <p><img src="NM.png" alt="啊，这里是备注" title="Nomiki"><br>这里有张图片，放上去试试</p>
+<img src="./NM.png" alt="alt text" width="200">
+这是相对路径使用的语法
+
+<style>
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    a img {
+        display: block;
+        margin: auto;
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+
+<p><a href="./NM.png"><img src="./NM-small.png" alt="alt text"></a></p>
+<p>在Markdown语法中，同样可以使用HTML标签来调整本地引用图片的大小。不同的是，需要使用相对路径来引用本地图片。</p>
+<p>具体步骤如下：</p>
+<pre><code>在Markdown文档中，使用相对路径引用本地图片，格式为![alt text](relative image path)，其中alt text为图片的替代文本，relative image path为图片相对于Markdown文档的路径。
+
+在引用图片的HTML标签中添加width和height属性，来调整图片的大小。由于本地图片的相对路径可能因文件夹结构而异，因此需要使用相对于Markdown文档的路径来设置src属性。例如，假设Markdown文档和图片在同一文件夹下，可以使用以下代码将图片宽度设置为200像素，高度自适应：
+</code></pre>
+<p>html</p>
+<img src="./image.png" alt="alt text" width="200">
+
+<p>或者，将图片高度设置为100像素，宽度自适应：</p>
+<p>html</p>
+<img src="./image.png" alt="alt text" height="100">
+
+<p>注意，如果引用的本地图片的路径中包含空格等特殊字符，需要使用URL编码将其转义。例如，如果图片名为my image.png，可以将其路径编码为my%20image.png。</p>
+<p>如何在Markdown语法下实现在本地引用（采用相对路径引用的）图片中，原本显示较小版本的图片，在点击后图片放大为正常大小</p>
+<p>在Markdown语法中，使用HTML标签可以实现点击图片后放大图片的效果。具体步骤如下：</p>
+<pre><code>使用Markdown语法引用图片，格式为![alt text](relative image path)，其中alt text为图片的替代文本，relative image path为图片相对于Markdown文档的路径。
+
+在引用图片的HTML标签中，添加&lt;a&gt;标签来包装图片，并设置href属性为图片的原始大小。例如：
+</code></pre>
+<p>html</p>
+<p><a href="./image.png"><img src="./image-small.png" alt="alt text"></a></p>
+<p>在这个例子中，<a>标签包含了图片的缩略图，href属性指向了图片的原始大小。用户在点击缩略图时，会打开原始图片。</p>
+<pre><code>使用CSS样式表设置缩略图的大小。例如，可以将缩略图的宽度设置为200像素：
+</code></pre>
+<p>html</p>
+<style>
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    a img {
+        display: block;
+        margin: auto;
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+
+<p>在这个例子中，<style>标签用于设置CSS样式。img选择器用于设置所有图片的样式，包括缩略图和原始大小图片。a img选择器用于设置缩略图的样式，将其宽度和高度限制在200像素以内，并在水平方向上居中显示。当用户点击缩略图时，会打开原始大小图片，并根据其实际大小自适应调整大小。</p>
+<p>需要注意的是，不同浏览器的行为可能有所不同，因此以上方法可能无法在所有浏览器中正常工作。可以尝试使用JavaScript库（例如lightbox.js）来实现更为可靠的图片放大效果。</p>
 
       </section>
 
