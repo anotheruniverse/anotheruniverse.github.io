@@ -1,0 +1,12 @@
+您可以使用以下命令来使用ImageMagick将图片转换为另一种格式，并使用原始图片的文件名来命名生成的图片：
+
+bash
+
+magick convert input_image.jpg -set filename:base %[basename] %[filename:base].png
+
+在这个命令中，input_image.jpg是您要转换的原始图片文件名，-set filename:base % 是将原始文件名设置为一个变量 %[basename]，然后 %[filename:base] 表示使用该变量作为生成图片的文件名，并在后面添加 .png 作为新图片的格式。这样就可以在不重命名文件的情况下生成新图片并保留原始文件名。
+
+请注意，使用该命令生成的新图片将位于原始图片的相同目录中。
+
+magick convert 'Mika_*' -resize 270 -set filename:base %[basename] %[filename:base]_small.jpg
+
