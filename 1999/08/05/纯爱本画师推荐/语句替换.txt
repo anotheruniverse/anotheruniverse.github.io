@@ -1,10 +1,11 @@
 
 搜索
 (\w+)(.jpg)
-
+(!\[\]\()(\w+)(.jpg)( \"\"\))
 
 替换为
 <a href="./$1$2"><img src="./$1-small.jpg" alt="alt text"></a>
+<a href="./$2$3"><img src="./$2-small.png" alt="$2"></a>
 
 使用正则表达式实现这个替换功能，需要以下步骤：
 
